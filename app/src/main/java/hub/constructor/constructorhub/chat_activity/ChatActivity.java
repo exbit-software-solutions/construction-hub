@@ -166,11 +166,9 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     private void readMessage(final String current_user_id, final String sellerUid){
-
         mChat = new ArrayList<>();
         DatabaseReference sRef;
         sRef = FirebaseDatabase.getInstance().getReference("Chats");
@@ -181,7 +179,7 @@ public class ChatActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot: dataSnapshot.getChildren()){
                     Chat chat = snapshot.getValue(Chat.class);
 
-                    if ( chat.getReceiver().equals(current_user.getUid()) && chat.getSender().equals(sellerUid)
+                    if ( chat.getReceiver().equals(current_user_id) && chat.getSender().equals(sellerUid)
                             || chat.getReceiver().equals(sellerUid) && chat.getSender().equals(current_user_id)){
                         mChat.add(chat);
                     }

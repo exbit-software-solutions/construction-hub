@@ -3,9 +3,9 @@ package hub.constructor.constructorhub.Class;
 public class Upload {
 
     private String userUid;
-    private String productId;
     private String userName;
     private String email;
+    private String productId;
     private String heading;
     private String companyName;
     private String companyAddress;
